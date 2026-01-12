@@ -60,6 +60,8 @@ Once the game is running, you will interact with the board through terminal prom
 | **Solve** | `s` or `solve` | Triggers the backtracking algorithm to fill the board. |
 | **Quit** | `q` or `quit` | Safely exits the game and returns to the terminal. |
 
+> **Note:** Rows and columns are usually indexed 1-9 for player convenience.
+
 ### Terminal Example
     ```text
     Current Board:
@@ -80,20 +82,25 @@ Once the game is running, you will interact with the board through terminal prom
 
 ---
 
-### 🛠️ Technical Overview
+## 🤝 Contributing
 
-**The Backtracking Algorithm**
+Contributions make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-The built-in solver employs a **recursive backtracking** strategy, which is a form of depth-first search. It systematically explores the grid to find a valid solution.
+1.  **Fork** the Project.
+2.  **Create** your Feature Branch (`git checkout -b feature/AmazingFeature`).
+3.  **Commit** your Changes (`git commit -m 'Add some AmazingFeature'`).
+4.  **Push** to the Branch (`git push origin feature/AmazingFeature`).
+5.  **Open** a Pull Request.
 
-**Logic Flow:**
+### Areas for Improvement
+* Adding a "Hint" system.
+* Implementing different difficulty presets (Easy, Medium, Hard).
+* Creating a Timer feature to track solve speed.
 
-1. **Find Empty:** Locate the first empty cell on the board.
+---
 
-2. **Attempt:** Try placing digits 1 through 9 in that cell.
+## 📄 License
 
-3. **Validate:** Check if the digit is valid (unique in Row, Column, and 3x3 Subgrid).
+Distributed under the **MIT License**. See `LICENSE` for more information.
 
-4. **Recurse:** If valid, move to the next empty cell.
-
-5. **Backtrack:** If no digit fits, reset the current cell to empty and return to the previous step to try a different number.
+---
