@@ -1,11 +1,20 @@
-.PHONY: clean
-CC=gcc
-CFLAGS=-g -Wall -lncurses
+# Variables
+CC = gcc
+CFLAGS = -Wall
+LIBS = -lncurses
+TARGET = game
+SRC = game.c
 
-all: game
+# Phony Targets
+.PHONY: all clean
 
-game: game.c
-	$(CC) -o $@ $^ $(CFLAGS)
+# Default Target
+all: $(TARGET)
 
+# Link Target
+$(TARGET): $(SRC)
+	$(CC) -o $(TARGET) $(SRC) $(CFLAGS) $(LIBS)
+
+# Clean Target
 clean:
-	rm -f game 
+	rm -f $(TARGET)
