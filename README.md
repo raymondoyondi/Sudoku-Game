@@ -61,36 +61,38 @@ Once the game is running, you will interact with the board through terminal prom
 | **Quit** | `q` or `quit` | Safely exits the game and returns to the terminal. |
 
 ### Terminal Example
-```text
- Current Board:
- 5 6 . | . 2 . | . . . 
- 3 . . | 4 1 5 | . . . 
- . 2 9 | . . . | . 5 . 
- ------+-------+------
- 8 . . | . 5 . | . . 9
- 7 . . | 3 . 6 | . . 1
- 1 . . | . 8 . | . . 5
- ------+-------+------
- . 8 . | . . . | 5 1 .
- . . . | 8 3 1 | . . 4
- . . . | . 4 . | . 7 2
+    ```text
+    Current Board:
+    5 6 . | . 2 . | . . . 
+    3 . . | 4 1 5 | . . . 
+    . 2 9 | . . . | . 5 . 
+    ------+-------+------
+    8 . . | . 5 . | . . 9
+    7 . . | 3 . 6 | . . 1
+    1 . . | . 8 . | . . 5
+    ------+-------+------
+    . 8 . | . . . | 5 1 .
+    . . . | 8 3 1 | . . 4
+    . . . | . 4 . | . 7 2
 
- Enter move (row col val) to solve: 1 3 4
- Move accepted!
+    Enter move (row col val) to solve: 1 3 4
+    Move accepted!
 
 
 ### 🛠️ Technical Overview
-The Backtracking Algorithm
-The built-in solver employs a recursive backtracking strategy, which is a form of depth-first search. It systematically explores the grid to find a valid solution.
 
-Logic Flow:
+**The Backtracking Algorithm**
 
-Find Empty: Locate the first empty cell on the board.
+The built-in solver employs a **recursive backtracking** strategy, which is a form of depth-first search. It systematically explores the grid to find a valid solution.
 
-Attempt: Try placing digits 1 through 9 in that cell.
+**Logic Flow:**
 
-Validate: Check if the digit is valid (unique in Row, Column, and 3x3 Subgrid).
+1. **Find Empty:** Locate the first empty cell on the board.
 
-Recurse: If valid, move to the next empty cell.
+2. **Attempt:** Try placing digits 1 through 9 in that cell.
 
-Backtrack: If no digit fits, reset the current cell to empty and return to the previous step to try a different number.
+3. **Validate:** Check if the digit is valid (unique in Row, Column, and 3x3 Subgrid).
+
+4. **Recurse:** If valid, move to the next empty cell.
+
+5. **Backtrack:** If no digit fits, reset the current cell to empty and return to the previous step to try a different number.
