@@ -77,3 +77,20 @@ Once the game is running, you will interact with the board through terminal prom
 
  Enter move (row col val) to solve: 1 3 4
  Move accepted!
+
+
+### 🛠️ Technical Overview
+The Backtracking Algorithm
+The built-in solver employs a recursive backtracking strategy, which is a form of depth-first search. It systematically explores the grid to find a valid solution.
+
+Logic Flow:
+
+Find Empty: Locate the first empty cell on the board.
+
+Attempt: Try placing digits 1 through 9 in that cell.
+
+Validate: Check if the digit is valid (unique in Row, Column, and 3x3 Subgrid).
+
+Recurse: If valid, move to the next empty cell.
+
+Backtrack: If no digit fits, reset the current cell to empty and return to the previous step to try a different number.
