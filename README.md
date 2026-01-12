@@ -78,6 +78,7 @@ Once the game is running, you will interact with the board through terminal prom
     Enter move (row col val) to solve: 1 3 4
     Move accepted!
 
+---
 
 ### 🛠️ Technical Overview
 
